@@ -1,0 +1,12 @@
+name: Git Action ionic
+on: push
+jobs:
+  check-electron-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: 
+          ionic-version: '6'
+      - run: npm install -g @ionic/cli
+      - run: ng --version
